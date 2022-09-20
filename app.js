@@ -10,4 +10,8 @@ app.get("/", (req, res) => {
   res.send("Inventory manager is chillin like a villin");
 });
 
+app.all("*", (req, res) => {
+  res.send("You are lost 😥");
+});
+
 module.exports = app;
