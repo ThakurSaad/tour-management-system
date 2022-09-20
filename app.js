@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("app is chillin like a villin");
+  res.send("Inventory manager is chillin like a villin");
 });
 
 module.exports = app;
