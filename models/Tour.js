@@ -68,20 +68,21 @@ const tourSchema = mongoose.Schema(
       ],
       enum: {
         values: [
+          "Bengali",
           "Japanese",
           "Korean",
           "Thai",
           "Arabic",
           "Greek",
           "English",
-          "Bengali",
           "Hindi",
           "Urdu",
           "Chinese",
           "German",
           "Spanish",
         ],
-        message: "OperatedIn can not be {VALUE}",
+        message:
+          "The language operated in can not be {VALUE}. Supported languages - Bengali, Japanese, Korean, Thai, Arabic, Greek, English, Hindi, Urdu, Chinese, German, Spanish ",
       },
     },
     operator: {
@@ -92,7 +93,7 @@ const tourSchema = mongoose.Schema(
       ],
     },
   },
-  { timeStamps: true }
+  { timestamps: true }
 );
 
 // Model
