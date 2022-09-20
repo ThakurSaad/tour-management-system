@@ -23,6 +23,12 @@ exports.createTour = async (req, res) => {
 
 exports.getTour = async (req, res) => {
   try {
+    let filters = { ...req.query };
+
+    const excludeFields = ["sort", "limit", "page"];
+
+    excludeFields.forEach((field) => delete filters[field]);
+
     const tours = await getTourService(filters);
 
     res.status(200).json({
