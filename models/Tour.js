@@ -37,6 +37,33 @@ const tourSchema = mongoose.Schema(
       },
       message: "Views must be an integer",
     },
+    price: {
+      type: Number,
+      required: [true, "Please provide a price for this tour"],
+      min: [0, "Price can not be negative"],
+    },
+    unit: {
+      type: String,
+      required: [true, "Please provide a unit for the price"],
+      enum: {
+        values: [
+          "$",
+          "USD",
+          "€",
+          "Euro",
+          "৳",
+          "BDT",
+          "₹",
+          "Rupee",
+          "¥",
+          "Yen",
+          "₩",
+          "Won",
+        ],
+        message:
+          "Unit value can not be '{VALUE}', must be $, USD, €, Euro, ৳, BDT, ₹, Rupee, ¥, Yen, ₩, Won",
+      },
+    },
     description: {
       type: String,
       required: [true, "Please provide a description for this tour"],
