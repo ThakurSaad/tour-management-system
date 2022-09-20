@@ -5,8 +5,8 @@ exports.createTourService = async (data) => {
   return tour;
 };
 
-exports.getTourService = async () => {
-  const tours = await Tour.find({});
+exports.getTourService = async (filters) => {
+  const tours = await Tour.find(filters);
   const total = await Tour.countDocuments();
   return { total, tours };
 };
