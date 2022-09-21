@@ -38,7 +38,7 @@
 
    - Get all the tours
 
-   -The client can select some specific fields for getting the information he needs as query.
+   - The client can select some specific fields for getting the information he needs as query.
 
    - Example: `/tours?fields=name,image`
 
