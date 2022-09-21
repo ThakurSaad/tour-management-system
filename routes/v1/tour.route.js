@@ -9,6 +9,7 @@ router
   .get(tourController.getTour);
 
 router.route("/tour/cheapest").get(tourController.getTourCheapest);
+router.route("/tour/trending").get(tourController.getTourTrending);
 
 router
   .route("/tour/:id")

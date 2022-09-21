@@ -5,6 +5,7 @@ const {
   updateTourByIdService,
   getTourCheapestService,
   updateTourViewCountByIdService,
+  getTourTrendingService,
 } = require("../services/tour.services");
 
 exports.createTour = async (req, res) => {
@@ -103,6 +104,24 @@ exports.getTourCheapest = async (req, res) => {
     res.status(400).json({
       status: "Fail",
       message: `Could not find top 3 cheapest tour`,
+      error: error.message,
+    });
+  }
+};
+
+exports.getTourTrending = async (req, res) => {
+  try {
+    const tours = await getTourTrendingService();
+
+    res.status(200).json({
+      status: "Success",
+      message: `Top 3 viewed tour found`,
+      data: tours,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: `Could not find top 3 viewed tour`,
       error: error.message,
     });
   }
