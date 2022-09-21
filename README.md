@@ -32,6 +32,30 @@
 
 `https://tour-management-system-two.vercel.app/api/v1/tour/trending`
 
+##### Sample Data
+
+```
+    {
+        "_id": "632ae886d166fe17afd98d93",
+        "image": "image",
+        "title": "Tour 1",
+        "rating": 9.9,
+        "views": 23,
+        "price": 0,
+        "unit": "USD",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam minima cum ex rem, voluptatem libero aliquam at quae sit enim. Iste placeat soluta molestiae sed. Et fuga incidunt vitae cumque accusamus eligendi!",
+        "destinations": "Tokyo, Hakone, Takayama, Kyoto, Osaka",
+        "ageRange": "18 to 39 year olds",
+        "regions": "Central Japan, Southern Japan, Honshu",
+        "travelStyle": "Group, Fully Guided, Historical, Christmas & New Year",
+        "operatedIn": "Bengali",
+        "operator": "Thakur Saad's Anime House",
+        "createdAt": "2022-09-21T10:33:43.007Z",
+        "updatedAt": "2022-09-21T12:15:11.483Z",
+        "__v": 0
+    }
+```
+
 ### Simple Documentation
 
 1. `GET /tours`
