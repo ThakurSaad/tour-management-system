@@ -34,31 +34,31 @@
 
 ### Simple Documentation
 
-1. GET /tours
+1. `GET /tours`
    <br>
    Get all the tours
    <br>
    The client can select some specific fields for getting the information he needs as query.
    <br>
-   Example: /tours?fields=name,image
+   Example: `/tours?fields=name,image`
    <br>
-   Must be paginated.
+   Is paginated.
    <br>
-   (BONUS) The client can send a field (e.g. price) as query to sort the data with it.
+   The client can send a field (e.g. `price`) as query to `sort` the data with it.
    <br>
-   Example: /tours?sort=price
+   Example: `/tours?sort=price`
    <br>
    <br>
 
-2. POST /tours
+2. `POST /tours`
    <br>
    Add a tour
    <br>
-   Must have a schema and the body should be validated through it.
+   Has a schema and the body is validated through it.
    <br>
    <br>
 
-3. GET /tours/:id
+3. `GET /tours/:id`
    <br>
    Get a tour details by id
    <br>
@@ -68,20 +68,20 @@
    <br>
    <br>
 
-4. PATCH /tour/:id
+4. `PATCH /tour/:id`
    <br>
    Update a tour
    <br>
-   (BONUS) Body should be validated
+   Body is validated
    <br>
    <br>
 
-5. GET /tour/trending
+5. `GET /tour/trending`
    <br>
    Get top 3 viewed tour
    <br>
    <br>
-6. GET /tour/cheapest
+6. `GET /tour/cheapest`
    <br>
    Get top 3 cheapest tours
 
