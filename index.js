@@ -27,14 +27,6 @@ exports.connect = async function () {
 
 exports.connect();
 
-// mongoose
-//   .connect(
-//     "mongodb+srv://tourManagementSystem:Obe6das6HbA9H6pm@cluster0.hpsgg9p.mongodb.net/?retryWrites=true&w=majority"
-//   )
-//   .then(() => {
-//     console.log(`Database connection is rocking`.bgRed);
-//   });
-
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
