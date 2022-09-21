@@ -40,7 +40,7 @@
 
    - The client can select some specific fields for getting the information he needs as query.
 
-   - Example: `/tours?fields=name,image`
+   - Example: `/tours?fields=title,image`
 
    - Is paginated.
 
@@ -66,7 +66,7 @@
 
    - Update a tour
 
-   - Body is validated
+   - Body is validated by the schema
 
 5. `GET /tour/trending`
 
