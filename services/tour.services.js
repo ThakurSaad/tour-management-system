@@ -6,11 +6,14 @@ exports.createTourService = async (data) => {
 };
 
 exports.getTourService = async (filters, queries) => {
-  const tours = await Tour.find(filters).select(queries.fields);
+  const tours = await Tour.find(filters)
+    .skip(queries.skip)
+    .limit(queries.limit)
+    .select(queries.fields);
 
   const total = await Tour.countDocuments(filters);
 
-  // const page = Math.ceil(total);
+  const page = Math.ceil(total / queries.limit);
 
-  return { total, tours };
+  return { total, page, tours };
 };
