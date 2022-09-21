@@ -7,6 +7,8 @@ router
   .post(tourController.createTour)
   .get(tourController.getTour);
 
+router.route("/tour/cheapest").get(tourController.getTourCheapest);
+
 router
   .route("/tour/:id")
   .get(tourController.getTourById)

@@ -24,6 +24,13 @@ exports.getTourByIdService = async (tourId) => {
   return tour;
 };
 
+exports.getTourCheapestService = async () => {
+  const tours = await Tour.find({ price: { $gte: 0 } })
+    .sort("price")
+    .limit(3);
+  return tours;
+};
+
 exports.updateTourByIdService = async (tourId, data) => {
   const tour = await Tour.updateOne({ _id: tourId }, data, {
     runValidators: true,
