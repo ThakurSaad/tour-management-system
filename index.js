@@ -4,9 +4,13 @@ const colors = require("colors");
 
 const app = require("./app");
 
-mongoose.connect("mongodb://127.0.0.1/tour-management").then(() => {
-  console.log(`Database connection is rocking`.bgRed);
-});
+mongoose
+  .connect(
+    "mongodb+srv://tourManagementSystem:Obe6das6HbA9H6pm@cluster0.hpsgg9p.mongodb.net/?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    console.log(`Database connection is rocking`.bgRed);
+  });
 
 const port = process.env.PORT || 8000;
 
