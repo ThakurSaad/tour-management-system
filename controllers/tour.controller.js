@@ -45,6 +45,11 @@ exports.getTour = async (req, res) => {
       queries.limit = +limit;
     }
 
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(",").join(" ");
+      queries.sortBy = sortBy;
+    }
+
     const tours = await getTourService(filters, queries);
 
     res.status(200).json({

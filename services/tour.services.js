@@ -9,7 +9,8 @@ exports.getTourService = async (filters, queries) => {
   const tours = await Tour.find(filters)
     .skip(queries.skip)
     .limit(queries.limit)
-    .select(queries.fields);
+    .select(queries.fields)
+    .sort(queries.sortBy);
 
   const total = await Tour.countDocuments(filters);
 
