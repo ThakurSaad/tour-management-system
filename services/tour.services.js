@@ -23,3 +23,10 @@ exports.getTourByIdService = async (tourId) => {
   const tour = await Tour.findById(tourId);
   return tour;
 };
+
+exports.updateTourByIdService = async (tourId, data) => {
+  const tour = await Tour.updateOne({ _id: tourId }, data, {
+    runValidators: true,
+  });
+  return tour;
+};

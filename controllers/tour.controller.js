@@ -2,6 +2,7 @@ const {
   createTourService,
   getTourService,
   getTourByIdService,
+  updateTourByIdService,
 } = require("../services/tour.services");
 
 exports.createTour = async (req, res) => {
@@ -81,7 +82,27 @@ exports.getTourById = async (req, res) => {
   } catch (error) {
     res.status(400).json({
       status: "Fail",
-      message: `Could not find tour for id ${id}`,
+      message: `Could not find tour for this id`,
+      error: error.message,
+    });
+  }
+};
+
+exports.updateTourById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const tour = await updateTourByIdService(id, req.body);
+
+    res.status(200).json({
+      status: "Success",
+      message: `Tour updated for id ${id}`,
+      data: tour,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: `Could not update tour for this id`,
       error: error.message,
     });
   }
