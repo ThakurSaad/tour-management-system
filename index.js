@@ -4,13 +4,36 @@ const colors = require("colors");
 
 const app = require("./app");
 
-mongoose
-  .connect(
-    "mongodb+srv://tourManagementSystem:Obe6das6HbA9H6pm@cluster0.hpsgg9p.mongodb.net/?retryWrites=true&w=majority"
-  )
-  .then(() => {
-    console.log(`Database connection is rocking`.bgRed);
-  });
+let conn = null;
+
+const uri =
+  "mongodb+srv://tourManagementSystem:Obe6das6HbA9H6pm@cluster0.hpsgg9p.mongodb.net/?retryWrites=true&w=majority";
+
+exports.connect = async function () {
+  if (conn == null) {
+    conn = mongoose
+      .connect(uri, {
+        serverSelectionTimeoutMS: 5000,
+      })
+      .then(() => console.log(`Database connection is rocking`.bgRed));
+
+    // `await`ing connection after assigning to the `conn` variable
+    // to avoid multiple function calls creating new connections
+    await conn;
+  }
+
+  return conn;
+};
+
+exports.connect();
+
+// mongoose
+//   .connect(
+//     "mongodb+srv://tourManagementSystem:Obe6das6HbA9H6pm@cluster0.hpsgg9p.mongodb.net/?retryWrites=true&w=majority"
+//   )
+//   .then(() => {
+//     console.log(`Database connection is rocking`.bgRed);
+//   });
 
 const port = process.env.PORT || 8000;
 
