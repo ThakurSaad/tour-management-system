@@ -36,15 +36,15 @@
 
 1. `GET /tours`
    <br>
-   Get all the tours
+   - Get all the tours
    <br>
-   The client can select some specific fields for getting the information he needs as query.
+    -The client can select some specific fields for getting the information he needs as query.
    <br>
-   Example: `/tours?fields=name,image`
+   - Example: `/tours?fields=name,image`
    <br>
-   Is paginated.
+   - Is paginated.
    <br>
-   The client can send a field (e.g. `price`) as query to `sort` the data with it.
+   - The client can send a field (e.g. `price`) as query to `sort` the data with it.
    <br>
    Example: `/tours?sort=price`
    <br>
@@ -52,38 +52,38 @@
 
 2. `POST /tours`
    <br>
-   Add a tour
+   - Add a tour
    <br>
-   Has a schema and the body is validated through it.
+   - Has a schema and the body is validated through it.
    <br>
    <br>
 
 3. `GET /tours/:id`
    <br>
-   Get a tour details by id
+   - Get a tour details by id
    <br>
-   Send all the information of the tour
+   - Send all the information of the tour
    <br>
-   Increase the view count by 1 for this tour every time a user hits this endpoint.
+   - Increase the view count by 1 for this tour every time a user hits this endpoint.
    <br>
    <br>
 
 4. `PATCH /tour/:id`
    <br>
-   Update a tour
+   - Update a tour
    <br>
-   Body is validated
+   - Body is validated
    <br>
    <br>
 
 5. `GET /tour/trending`
    <br>
-   Get top 3 viewed tour
+   - Get top 3 viewed tour
    <br>
    <br>
 6. `GET /tour/cheapest`
    <br>
-   Get top 3 cheapest tours
+   - Get top 3 cheapest tours
 
 ### Installed packages
 
