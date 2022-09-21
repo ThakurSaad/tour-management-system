@@ -29,7 +29,14 @@ exports.getTour = async (req, res) => {
 
     excludeFields.forEach((field) => delete filters[field]);
 
-    const tours = await getTourService(filters);
+    const queries = {};
+
+    if (req.query.fields) {
+      const fields = req.query.fields.split(",").join(" ");
+      queries.fields = fields;
+    }
+
+    const tours = await getTourService(filters, queries);
 
     res.status(200).json({
       status: "Success",

@@ -5,8 +5,12 @@ exports.createTourService = async (data) => {
   return tour;
 };
 
-exports.getTourService = async (filters) => {
-  const tours = await Tour.find(filters);
+exports.getTourService = async (filters, queries) => {
+  const tours = await Tour.find(filters).select(queries.fields);
+
   const total = await Tour.countDocuments(filters);
+
+  // const page = Math.ceil(total);
+
   return { total, tours };
 };
