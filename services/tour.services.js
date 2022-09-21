@@ -37,3 +37,12 @@ exports.updateTourByIdService = async (tourId, data) => {
   });
   return tour;
 };
+
+exports.updateTourViewCountByIdService = async (tourId) => {
+  const tour = await Tour.updateOne(
+    { _id: tourId },
+    { $inc: { views: 1 } },
+    { runValidators: true }
+  );
+  return tour;
+};

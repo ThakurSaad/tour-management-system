@@ -4,6 +4,7 @@ const {
   getTourByIdService,
   updateTourByIdService,
   getTourCheapestService,
+  updateTourViewCountByIdService,
 } = require("../services/tour.services");
 
 exports.createTour = async (req, res) => {
