@@ -22,7 +22,7 @@
 
 ##### PATCH/Update tour by ID
 
-`https://tour-management-system-two.vercel.app/api/v1/tour/:id`
+`https://tour-management-system-two.vercel.app/api/v1/tours/:id`
 
 ##### GET cheapest tour
 
