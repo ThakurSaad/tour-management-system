@@ -18,3 +18,8 @@ exports.getTourService = async (filters, queries) => {
 
   return { total, page, tours };
 };
+
+exports.getTourByIdService = async (tourId) => {
+  const tour = await Tour.findById(tourId);
+  return tour;
+};
